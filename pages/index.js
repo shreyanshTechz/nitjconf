@@ -21,7 +21,7 @@ const Home = () => {
         <title>NTJ Conference</title>
         <meta
           name="description"
-          content="Nitj Confernce Website"
+          content="Nitj Conf Website"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
