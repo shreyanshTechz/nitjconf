@@ -40,7 +40,7 @@ const Home = () => {
      <div className="flex flex-wrap justify-center gap-5 mt-10 md:justify-around">
      {spon.map((e) =>
              (<div className="pt-2 text-gray-400 dark:text-gray-400">
-               <img src={e.logo} width="217" height="217"/>
+               <img className="sponimg" src={e.logo} width="217" height="217"/>
              </div>)
      )}
    </div>

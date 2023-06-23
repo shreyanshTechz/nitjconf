@@ -19,6 +19,10 @@ body{
     @apply dark:bg-trueGray-900;
   }
 }
+.sponimg{
+  width: auto;
+  height: 100px;
+}
 .award-card:hover{
   cursor: pointer;
   border: solid salmon 2px;
