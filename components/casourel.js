@@ -37,9 +37,7 @@ export default function Casourel() {
         <div id={`slider${item}`} className="hidden container slider-cont mx-auto">
         <div className="bg-cover bg-center slider-bg h-auto text-white py-24 px-10" style={{backgroundPosition:"top", backgroundImage: `url(${data[item]})`}}>
        <div className="md:w-1/2">
-        <p className="font-bold text-sm uppercase">Glimpse</p>
-        <p className="text-3xl font-bold">Of </p>
-        <p className="text-2xl mb-10 leading-none">Past Confernces</p>
+        {/* <p className="font-bold text-sm uppercase">Glimpse OF PAST CONFERNCE</p> */}
         {/* <a href="#" className="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Contact us</a> */}
         </div>  
     </div> 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-
+import $ from 'jquery'
 const ThemeChanger = () => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
@@ -14,7 +14,7 @@ const ThemeChanger = () => {
     <div className="flex items-center">
       {theme === "dark" ? (
         <button
-          onClick={() => setTheme("light")}
+          onClick={() => {setTheme("light");}}
           className="text-gray-300 rounded-full outline-none focus:outline-none">
           <span className="sr-only">Light Mode</span>
 

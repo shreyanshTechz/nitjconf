@@ -96,7 +96,7 @@ const Navbar = () => {
               SignIN
           </Link>
 
-          <ThemeChanger />
+          {/* <ThemeChanger /> */}
         </div>
       </nav>
     </div>
