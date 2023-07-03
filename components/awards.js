@@ -4,34 +4,29 @@ const Awards = () =>{
   const [award,setaward] = useState([1,2,3,4]);
   useEffect(() => {
     const getData = async() => {
-      let headersList = {
-        "Accept": "*/*",
-        "Authorization": "X6jG3F"
-       }
-       
-       let response = await fetch("https://conference.cyclic.app/awards", { 
-         method: "GET",
-         headers: headersList
-       });
-       
-       let data = await response.json();
-       setaward(data);
-       
-    }
+     try {
+       let headersList = {
+         "Accept": "*/*",
+         "Authorization": "X6jG3F"
+        }
+        
+        let response = await fetch("https://conference.cyclic.app/awards", { 
+          method: "GET",
+          headers: headersList
+        });
+        
+        let data = await response.json();
+        setaward(data); 
+     } catch (error) {
       getData();
-      console.log(award);
+     } 
+    }
+    getData();
   }, [])
-  
 
-  console.log(typeof(award));
-  console.log(award);
   const ListItems =()=> (award.map((e) =>
   <>
       <div className="mb-12 md:mb-0 award-card">
-         {/* <div className="mb-6 flex justify-center">
-           <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).jpg"
-             className="w-32 rounded-full shadow-lg dark:shadow-black/20" />
-         </div> */}
          <h5 className="mb-2 text-lg font-bold">{e.title1}</h5>
          <h6 className="mb-4 font-medium text-primary text-cyan-300 text-primary-800">
            {e.title2}
@@ -90,6 +85,7 @@ const Awards = () =>{
       
     </div>
   </section>
-</div>)
+</div>
+)
 }
 export default Awards;

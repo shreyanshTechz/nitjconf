@@ -7,7 +7,7 @@ const Navbar = () => {
   const object = {
     "Home" : "",
     "Speakers": " ",
-    "Committee" :"",
+    "Committee" :"#com",
     "Paper":"",
     "Sponsorships":"",
     "Awards":"#awards",
@@ -96,7 +96,7 @@ const Navbar = () => {
               SignIN
           </Link>
 
-          {/* <ThemeChanger /> */}
+          <ThemeChanger />
         </div>
       </nav>
     </div>
