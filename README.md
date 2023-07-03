@@ -16,7 +16,7 @@ git clone https://github.com/shreyanshTechz/nitjconf.git
 ### \. Navigate to the directory
 
 ```
-cd nextly-template
+cd nitjconf
 ```
 
 ### . Install dependencies
