@@ -32,7 +32,7 @@ export default function Casourel() {
 
   return (
     <div>
-      <div className="sliderAx h-auto">
+      <div className="sliderAx full">
       {navigation.map((item, index) => (
         <div id={`slider${item}`} className="hidden container slider-cont mx-auto">
         <div className="bg-cover bg-center slider-bg h-auto text-white py-24 px-10" style={{backgroundPosition:"top", backgroundImage: `url(${data[item]})`}}>

@@ -45,6 +45,9 @@ border: 1px solid rgba(255, 255, 255, 1);
   padding: 10px;
   cursor: pointer;
 }
+.full{
+  height: 80vh;
+}
 #scroll-text:hover{
   animation-play-state: paused;
   cursor: pointer;
