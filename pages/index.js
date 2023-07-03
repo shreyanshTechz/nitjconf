@@ -3,39 +3,48 @@ import Hero from "../components/hero";
 import Navbar from "../components/navbar";
 import SectionTitle from "../components/sectionTitle";
 import { useState,useEffect } from "react";
-import { benefitOne, benefitTwo } from "../components/data";
 import Video from "../components/video";
-import Benefits from "../components/benefits";
 import Footer from "../components/footer";
-import Testimonials from "../components/testimonials";
-import Cta from "../components/cta";
-import Faq from "../components/faq";
 import PopupWidget from "../components/popupWidget";
 import Awards from "../components/awards";
 import Casourel from "../components/casourel";
-// import Button from "../components/button";
-const Home = () => {
+import Announcements from "../components/announcements";
+import Conf from "../components/conf";
+import Comittee from "../components/comittee";
+
+const App = () => {
   const [spon,setspon] = useState([]);
+  const [conf,setconf] = useState([]);
   useEffect(() => {
-   const getData = async() => {
-     let headersList = {
-       "Accept": "*/*",
-       "Authorization": "X6jG3F"
-      }
-      
-      let response = await fetch("https://conference.cyclic.app/sponsors", { 
-        method: "GET",
-        headers: headersList
-      });
-      
-      let data = await response.json();
-      setspon(data);
-      
-   }
-     getData();
-     console.log(spon);
- }, [])
-   console.log(spon);
+    const getData = async() => {
+     try {
+      // console.log("times");
+       let headersList = {
+         "Accept": "*/*",
+         "Authorization": "X6jG3F"
+        }
+        
+        let response = await fetch("https://conference.cyclic.app/sponsors", { 
+          method: "GET",
+          headers: headersList
+        });
+        let response2 = await fetch("https://conference.cyclic.app/home", { 
+          method: "GET",
+          headers: headersList
+        });
+   
+        let data = await response.json();
+        let data2 = await response2.json();
+        console.log(data2);
+        setspon(data);  setconf(data2);
+        console.log(data);
+     } catch (error) {
+      getData();
+     } 
+    }
+    getData();
+  }, [])
+
    const Sponsers =()=> (
      <div className="flex flex-wrap justify-center gap-5 mt-10 md:justify-around">
      {spon.map((e) =>
@@ -49,7 +58,9 @@ const Home = () => {
 
 
   return (
+    
     <>
+
       <Head>
         <title>NTJ Conference</title>
         <meta
@@ -68,9 +79,9 @@ const Home = () => {
       </SectionTitle>
       <Casourel/>
 
-      <SectionTitle
+      <SectionTitle className='my-5'
         pretitle=""
-        title="SPONSERS">
+        title="SPONSORS">
        
       </SectionTitle>
           <Sponsers/>
@@ -78,29 +89,31 @@ const Home = () => {
           <SectionTitle
         pretitle="" title="UPCOMING CONFERENCES">
       </SectionTitle>
-      <Benefits data={benefitOne} />
-      <Benefits imgPos="right" data={benefitTwo} />
+
+      <Conf conf ={conf}/>
+      
+      {/* <Benefits imgPos="right" data={benefitTwo} /> */}
       <Awards/>
       <SectionTitle
-        pretitle="Explore More Conference"
-        title="We Invite You to be the part">
-        This section is to highlight a promo or demo video of your product.
-        Analysts says a landing page with video has 3% more conversion rate. So,
-        don&apos;t forget to add one. Just like this.
+        pretitle="Announcements Section"
+        title="Get updated with the latest">
+      </SectionTitle>
+
+
+
+      <Announcements/>
+      <SectionTitle
+        pretitle="ICSCCC 2023"
+        title="3rd International Conference on Security">
+        Watch the latest Video on Inaguartion of Conference on 3rd International Conference on Secure Cyber Computing and Communications (ICSCCC 2023).
       </SectionTitle>
       <Video />
-      <SectionTitle
-        pretitle="Feedback"
-        title="Here's what our Attendee said">
-        Feedback is a great way to increase the awareness..
+      
+      <SectionTitle pretitle="Comittee Members" title="Meet Our Comittee Members">
+       
       </SectionTitle>
-      <Testimonials />
-      <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
-        Answer your customers possible questions here, it will increase the
-        conversion rate as well as support or chat requests.
-      </SectionTitle>
-      <Faq />
-      <Cta />
+      
+      <Comittee/>
       <Footer />
       <PopupWidget />
       
@@ -108,4 +121,4 @@ const Home = () => {
   );
 }
 
-export default Home;
+export default App;
