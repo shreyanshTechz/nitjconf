@@ -39,7 +39,7 @@ const App = () => {
         setspon(data);  setconf(data2);
         console.log(data);
      } catch (error) {
-      getData();
+      // getData();
      } 
     }
     getData();

@@ -26,7 +26,7 @@ export default function Comittee() {
         let d = await response.json();
        setdata(d);
      } catch (error) {
-      getData();
+      // getData();
      } 
     }
     getData();

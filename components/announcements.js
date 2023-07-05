@@ -22,7 +22,7 @@ export default function Announcements() {
          let data = await response.json();
          setaward(data);
       } catch (error) {
-        getData();
+        // getData();
       }
      
        

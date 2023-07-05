@@ -18,7 +18,7 @@ const Awards = () =>{
         let data = await response.json();
         setaward(data); 
      } catch (error) {
-      getData();
+      // getData();
      } 
     }
     getData();
