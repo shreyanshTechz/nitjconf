@@ -15,35 +15,35 @@ import Comittee from "../components/comittee";
 const App = () => {
   const [spon,setspon] = useState([]);
   const [conf,setconf] = useState([]);
-  useEffect(() => {
-    const getData = async() => {
-     try {
-      // console.log("times");
-       let headersList = {
-         "Accept": "*/*",
-         "Authorization": "X6jG3F"
-        }
+  // useEffect(() => {
+  //   const getData = async() => {
+  //    try {
+  //     // console.log("times");
+  //      let headersList = {
+  //        "Accept": "*/*",
+  //        "Authorization": "X6jG3F"
+  //       }
         
-        let response = await fetch("https://conference.cyclic.app/sponsors", { 
-          method: "GET",
-          headers: headersList
-        });
-        let response2 = await fetch("https://conference.cyclic.app/home", { 
-          method: "GET",
-          headers: headersList
-        });
+  //       let response = await fetch("https://conference.cyclic.app/sponsors", { 
+  //         method: "GET",
+  //         headers: headersList
+  //       });
+  //       let response2 = await fetch("https://conference.cyclic.app/home", { 
+  //         method: "GET",
+  //         headers: headersList
+  //       });
    
-        let data = await response.json();
-        let data2 = await response2.json();
-        console.log(data2);
-        setspon(data);  setconf(data2);
-        console.log(data);
-     } catch (error) {
-      // getData();
-     } 
-    }
-    getData();
-  }, [])
+  //       let data = await response.json();
+  //       let data2 = await response2.json();
+  //       console.log(data2);
+  //       setspon(data);  setconf(data2);
+  //       console.log(data);
+  //    } catch (error) {
+  //     // getData();
+  //    } 
+  //   }
+  //   getData();
+  // }, [])
 
    const Sponsers =()=> (
      <div className="flex flex-wrap justify-center gap-5 mt-10 md:justify-around">
